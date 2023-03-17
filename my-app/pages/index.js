@@ -146,7 +146,18 @@ export default function Home() {
           <div className={styles.description}>
             {totalTokenIdsMinted}/10 have been minted
           </div>
-          {renderButton()}
+          <div>{renderButton()}</div>
+          <button
+            className={styles.button}
+            onClick={() =>
+              window.open(
+                "https://testnets.opensea.io/collection/lw3punks-62",
+                "_blank"
+              )
+            }
+          >
+            View Collection
+          </button>
         </div>
         <div>
           <img
