@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Web3Modal from "web3modal";
 import { abi, NFT_CONTRACT_ADDRESS } from "../constants";
 import styles from "../styles/Home.module.css";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function Home() {
   const [totalTokenIdsMinted, setTotalTokenIdsMinted] = useState("0");
@@ -125,7 +126,7 @@ export default function Home() {
 
     return (
       <button className={styles.button} onClick={publicMint}>
-        Public Mint 🚀
+        🚀 Public Mint
       </button>
     );
   };
@@ -156,7 +157,7 @@ export default function Home() {
               )
             }
           >
-            View Collection
+            <FiExternalLink /> View Collection
           </button>
         </div>
         <div>
