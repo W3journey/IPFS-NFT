@@ -103,16 +103,8 @@ export default function Home() {
   useEffect(() => {
     if (!walletConnected) {
       connectWallet();
-      getTotalTokenIdsMinted();
-      // set an interval to get the number of token Ids minted every 30 seconds
-      const intervalId = setInterval(async function () {
-        await getTotalTokenIdsMinted();
-        console.log("Updated number of Minted NFTs");
-      }, 30 * 1000);
-
-      // return a cleanup function to clear the interval
-      return () => clearInterval(intervalId);
     }
+    getTotalTokenIdsMinted();
   }, [walletConnected]);
 
   /**
