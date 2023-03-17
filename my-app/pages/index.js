@@ -105,7 +105,12 @@ export default function Home() {
     if (!walletConnected) {
       connectWallet();
     }
-    getTotalTokenIdsMinted();
+
+    if (walletConnected) {
+      setInterval(async function () {
+        await getTotalTokenIdsMinted();
+      }, 60 * 1000);
+    }
   }, [walletConnected]);
 
   /**
@@ -142,7 +147,7 @@ export default function Home() {
         <div>
           <h1 className={styles.title}>Welcome to LW3Punks!</h1>
           <div className={styles.description}>
-            it&#36;s an NFT collection for LearnWeb3 students.
+            its an NFT collection for LearnWeb3 students.
           </div>
           <div className={styles.description}>
             {totalTokenIdsMinted}/10 have been minted
